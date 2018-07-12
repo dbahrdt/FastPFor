@@ -1,7 +1,7 @@
 #include <exception> // for std::logic_error
 #include "bitpackingunaligned.h"
 
-using FastPForLib::byte;
+namespace FastPForLib {
 
 typedef const byte *(*runpacker)(const byte *__restrict__ in,
                                  uint32_t *__restrict__ out);
@@ -7400,3 +7400,5 @@ byte *fastunalignedbytepackwithoutmask_16(const byte *__restrict__ in,
   }
   throw std::logic_error("number of bits is unsupported");
 }
+
+} //end namespace FastPForLib
